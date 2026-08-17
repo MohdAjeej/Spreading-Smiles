@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #2b2a4c;
+  --color-navy-soft: #6f6d8c;
+  --color-pink: #3bf0bd;
+  --color-pink-dark: #19daa4;
+  --color-pink-light: #edfdf8;
+  --color-blush: #fce6ee;
+  --color-blush-dark: #f8d0de;
+  --color-blue: #3f7de0;
+  --color-blue-dark: #2f63bd;
+  --color-gold: #e8b54a;
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-navy-soft: var(--color-navy-soft);
+  --color-pink: var(--color-pink);
+  --color-pink-dark: var(--color-pink-dark);
+  --color-pink-light: var(--color-pink-light);
+  --color-blush: var(--color-blush);
+  --color-blush-dark: var(--color-blush-dark);
+  --color-blue: var(--color-blue);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-gold: var(--color-gold);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --container-8xl: 90rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-navy);
+}
+
+::selection {
+  background: var(--color-pink);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hero-heading {
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
