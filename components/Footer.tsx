@@ -22,6 +22,7 @@ const tourismLinks = [
   { label: "Travel & Stay", href: "/travel-stay" },
   { label: "Dental Tourism", href: "/dental-tourism" },
   { label: "Patient Stories", href: "/patient-stories" },
+  { label: "Case Study", href: "/case-study" },
 ];
 
 const infoColumns = [

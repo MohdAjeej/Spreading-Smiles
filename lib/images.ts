@@ -135,6 +135,19 @@ export const images = {
   },
 } as const;
 
+const CASE_STUDY_COUNT = 38;
+
+export const caseStudyImages: ImageAsset[] = Array.from(
+  { length: CASE_STUDY_COUNT },
+  (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return {
+      src: `/case-study/case-study-${n}.jpeg`,
+      alt: `Spreading Smiles case study photo ${i + 1}`,
+    } satisfies ImageAsset;
+  }
+);
+
 export const beforeAfterImages = {
   implants: {
     before: images.hero.consultation,

@@ -4,6 +4,7 @@ export const navLinks = [
   { label: "Why India", href: "/why-india" },
   { label: "Dentists", href: "/dentists" },
   { label: "Patient Stories", href: "/patient-stories" },
+  { label: "Case Study", href: "/case-study" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
