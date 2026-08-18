@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { Menu } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import ToothIcon from "@/components/ui/ToothIcon";
 import MobileMenu from "@/components/MobileMenu";
 import { navLinks, brand } from "@/lib/nav";
+import logo from "@/app/assets/logo.jpg";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,11 +36,19 @@ export default function Navbar() {
         <nav className="flex h-20 items-center justify-between gap-4">
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2 whitespace-nowrap font-serif text-xl tracking-tight text-navy sm:text-2xl"
+            className="flex shrink-0 items-center"
             aria-label={`${brand.fullName} home`}
           >
-            <ToothIcon className="h-6 w-6 shrink-0 text-pink" />
-            {brand.name}
+            <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full sm:h-16 sm:w-16">
+              <Image
+                src={logo}
+                alt=""
+                fill
+                sizes="64px"
+                className="object-cover"
+                priority
+              />
+            </span>
           </Link>
 
           <ul className="hidden items-center gap-6 2xl:flex">

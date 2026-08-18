@@ -48,6 +48,7 @@ export default function ContactForm() {
                 type="text"
                 className="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink"
                 placeholder="Jane Doe"
+                suppressHydrationWarning
               />
             </div>
             <div className="sm:col-span-1">
@@ -60,6 +61,7 @@ export default function ContactForm() {
                 type="email"
                 className="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink"
                 placeholder="jane@email.com"
+                suppressHydrationWarning
               />
             </div>
             <div className="sm:col-span-1">
@@ -71,6 +73,7 @@ export default function ContactForm() {
                 type="tel"
                 className="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink"
                 placeholder="+1 555 000 0000"
+                suppressHydrationWarning
               />
             </div>
             <div className="sm:col-span-1">
@@ -82,6 +85,7 @@ export default function ContactForm() {
                 type="text"
                 className="w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink"
                 placeholder="United States"
+                suppressHydrationWarning
               />
             </div>
             <div className="sm:col-span-2">
@@ -94,6 +98,7 @@ export default function ContactForm() {
                 rows={4}
                 className="w-full resize-none rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink"
                 placeholder="Tell us about your dental needs..."
+                suppressHydrationWarning
               />
             </div>
             <div className="sm:col-span-2">

@@ -148,6 +148,7 @@ export default function ConsultationForm() {
                   placeholder="Full Name"
                   value={data.fullName}
                   onChange={(e) => setData({ ...data, fullName: e.target.value })}
+                  suppressHydrationWarning
                 />
                 <input
                   className={inputClasses()}
@@ -155,6 +156,7 @@ export default function ConsultationForm() {
                   type="email"
                   value={data.email}
                   onChange={(e) => setData({ ...data, email: e.target.value })}
+                  suppressHydrationWarning
                 />
                 <input
                   className={inputClasses()}
@@ -162,12 +164,14 @@ export default function ConsultationForm() {
                   type="tel"
                   value={data.phone}
                   onChange={(e) => setData({ ...data, phone: e.target.value })}
+                  suppressHydrationWarning
                 />
                 <input
                   className={inputClasses()}
                   placeholder="Country"
                   value={data.country}
                   onChange={(e) => setData({ ...data, country: e.target.value })}
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -208,6 +212,7 @@ export default function ConsultationForm() {
                 placeholder="Describe your dental concerns, goals or any relevant history..."
                 value={data.needs}
                 onChange={(e) => setData({ ...data, needs: e.target.value })}
+                suppressHydrationWarning
               />
             </div>
           )}

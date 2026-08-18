@@ -97,22 +97,30 @@ export default function ReferFriend() {
                     onSubmit={handleSubmit}
                     className="grid grid-cols-1 gap-4"
                   >
-                    <input required placeholder="Your Name *" className={inputClasses()} />
+                    <input
+                      required
+                      placeholder="Your Name *"
+                      className={inputClasses()}
+                      suppressHydrationWarning
+                    />
                     <input
                       required
                       type="email"
                       placeholder="Your Email Address *"
                       className={inputClasses()}
+                      suppressHydrationWarning
                     />
                     <input
                       required
                       placeholder="Who You Referred *"
                       className={inputClasses()}
+                      suppressHydrationWarning
                     />
                     <textarea
                       rows={3}
                       placeholder="Additional Comments or Referral Date"
                       className={`${inputClasses()} resize-none`}
+                      suppressHydrationWarning
                     />
                     <Button type="submit" variant="secondary" size="lg" className="mt-1">
                       Refer Your Friend

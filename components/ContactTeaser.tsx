@@ -79,18 +79,25 @@ export default function ContactTeaser() {
                   onSubmit={handleSubmit}
                   className="mt-8 grid grid-cols-1 gap-4"
                 >
-                  <input required placeholder="Enter your Name" className={inputClasses()} />
+                  <input
+                    required
+                    placeholder="Enter your Name"
+                    className={inputClasses()}
+                    suppressHydrationWarning
+                  />
                   <input
                     required
                     type="email"
                     placeholder="Enter your Email Address"
                     className={inputClasses()}
+                    suppressHydrationWarning
                   />
                   <textarea
                     required
                     rows={3}
                     placeholder="Enter your Message"
                     className={`${inputClasses()} resize-none`}
+                    suppressHydrationWarning
                   />
                   <Button type="submit" variant="secondary" size="lg" className="mt-1 w-fit">
                     Send Message
