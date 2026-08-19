@@ -8,7 +8,8 @@ export type Treatment = {
   duration: string;
   visits: string;
   startingPrice: string;
-  internationalAveragePrice: string;
+  startingPriceUSD: number;
+  priceUnit?: "tooth" | "unit";
   image: ImageAsset;
   category: "implants" | "veneers" | "smile-makeover" | "full-mouth";
   whatsIncluded: string[];
@@ -16,117 +17,78 @@ export type Treatment = {
 
 export const treatments: Treatment[] = [
   {
-    slug: "dental-implants",
-    name: "Dental Implants",
+    slug: "consultation",
+    name: "Consultation",
     shortDescription:
-      "A permanent, natural-looking solution for missing teeth using titanium implants.",
+      "A comprehensive dental check-up and treatment planning session with your specialist.",
     description:
-      "Dental implants replace missing teeth from the root up, giving you a permanent, natural-looking result that restores confidence and function. Our partner clinics use advanced 3D imaging and premium implant systems trusted by dentists worldwide.",
-    duration: "7–10 Days",
-    visits: "2–3 Visits",
-    startingPrice: "$900",
-    internationalAveragePrice: "$3,500",
-    image: images.clinic.dentistAtWork,
-    category: "implants",
-    whatsIncluded: [
-      "Comprehensive diagnostic scans (CT/X-ray)",
-      "Premium titanium implant placement",
-      "Personal treatment coordinator",
-      "Post-treatment care kit and guidance",
-    ],
-  },
-  {
-    slug: "all-on-4",
-    name: "All-on-4",
-    shortDescription:
-      "A full arch of new teeth supported by just four strategically placed implants.",
-    description:
-      "All-on-4 replaces an entire arch of missing or failing teeth using only four implants, giving you a fixed, full set of teeth often in a single visit. It's a life-changing option for patients with extensive tooth loss.",
-    duration: "5–7 Days",
-    visits: "1–2 Visits",
-    startingPrice: "$4,200",
-    internationalAveragePrice: "$16,000",
-    image: images.clinic.treatmentRoom,
-    category: "full-mouth",
-    whatsIncluded: [
-      "Full arch diagnostic workup",
-      "Four-implant fixed bridge placement",
-      "Temporary and final prosthesis",
-      "Dedicated aftercare follow-up plan",
-    ],
-  },
-  {
-    slug: "full-mouth-rehabilitation",
-    name: "Full Mouth Rehabilitation",
-    shortDescription:
-      "A complete restoration combining implants, crowns and bridges for a fully renewed smile.",
-    description:
-      "Full mouth rehabilitation is a tailored combination of restorative treatments — implants, crowns, bridges and more — designed together to rebuild both function and aesthetics for patients with complex dental needs.",
-    duration: "10–14 Days",
-    visits: "2–4 Visits",
-    startingPrice: "$6,500",
-    internationalAveragePrice: "$24,000",
-    image: images.clinic.reception,
-    category: "full-mouth",
-    whatsIncluded: [
-      "Complete oral health assessment",
-      "Custom multi-treatment plan",
-      "Coordinated specialist care",
-      "Extended recovery support",
-    ],
-  },
-  {
-    slug: "veneers",
-    name: "Veneers",
-    shortDescription:
-      "Ultra-thin porcelain shells that transform the shape, color and alignment of your smile.",
-    description:
-      "Porcelain veneers are custom-crafted to correct chips, gaps, discoloration and minor misalignment, giving you a refined, natural-looking smile that's built to last.",
-    duration: "4–6 Days",
-    visits: "2 Visits",
-    startingPrice: "$280 / tooth",
-    internationalAveragePrice: "$1,000 / tooth",
-    image: images.clinic.cosmetic,
-    category: "veneers",
-    whatsIncluded: [
-      "Smile design consultation",
-      "Digital smile preview",
-      "Custom porcelain veneer fabrication",
-      "Fit and finish follow-up",
-    ],
-  },
-  {
-    slug: "crowns-bridges",
-    name: "Crowns & Bridges",
-    shortDescription:
-      "Durable restorations that repair damaged teeth or replace short spans of missing teeth.",
-    description:
-      "Crowns and bridges restore strength, shape and function to damaged or missing teeth using durable, natural-looking materials matched precisely to your smile.",
-    duration: "4–5 Days",
-    visits: "2 Visits",
-    startingPrice: "$220 / unit",
-    internationalAveragePrice: "$1,200 / unit",
-    image: images.clinic.crownsBridges,
+      "Your journey starts with a thorough consultation — a full oral examination, diagnostic imaging where needed, and an honest conversation about your goals. You'll leave with a clear, personalized treatment plan and transparent pricing before committing to any procedure.",
+    duration: "Same Day",
+    visits: "1 Visit",
+    startingPrice: "$5",
+    startingPriceUSD: 5,
+    image: images.hero.consultation,
     category: "smile-makeover",
     whatsIncluded: [
-      "Precision digital impressions",
-      "Metal-free ceramic materials",
-      "Bite and comfort calibration",
-      "Long-term warranty guidance",
+      "Full oral health examination",
+      "Diagnostic X-rays if required",
+      "Personalized treatment plan",
+      "Transparent cost breakdown",
     ],
   },
   {
-    slug: "root-canal-treatment",
-    name: "Root Canal Treatment",
+    slug: "dental-cleaning",
+    name: "Dental Cleaning (Scaling)",
+    shortDescription:
+      "Professional scaling and polishing to remove plaque, tartar and surface stains.",
+    description:
+      "Routine professional cleaning removes built-up plaque and tartar that brushing alone can't reach, helping prevent gum disease and cavities while leaving your smile visibly brighter and healthier.",
+    duration: "Same Day",
+    visits: "1 Visit",
+    startingPrice: "$10",
+    startingPriceUSD: 10,
+    image: images.treatments.dentalCleaning,
+    category: "smile-makeover",
+    whatsIncluded: [
+      "Ultrasonic scaling and plaque removal",
+      "Polishing and stain removal",
+      "Gum health assessment",
+      "Oral hygiene guidance",
+    ],
+  },
+  {
+    slug: "tooth-filling",
+    name: "Tooth Filling (Composite)",
+    shortDescription:
+      "Tooth-colored composite fillings that repair cavities and restore natural tooth shape.",
+    description:
+      "Composite fillings repair decayed or damaged teeth using a durable, natural-looking resin that's shade-matched to your enamel, restoring both strength and appearance in a single visit.",
+    duration: "Same Day",
+    visits: "1 Visit",
+    startingPrice: "$10 / tooth",
+    startingPriceUSD: 10,
+    priceUnit: "tooth",
+    image: images.treatments.toothFilling,
+    category: "smile-makeover",
+    whatsIncluded: [
+      "Decay removal and cavity preparation",
+      "Tooth-colored composite restoration",
+      "Shade matching to natural teeth",
+      "Bite adjustment and polish",
+    ],
+  },
+  {
+    slug: "root-canal",
+    name: "Root Canal (RCT)",
     shortDescription:
       "Pain-relieving treatment that saves an infected or damaged tooth from extraction.",
     description:
-      "Modern, minimally uncomfortable root canal therapy removes infection and preserves your natural tooth, using rotary endodontic technology for precision and comfort.",
+      "Modern, minimally uncomfortable root canal therapy removes infection from deep within the tooth and preserves your natural tooth, using rotary endodontic technology for precision and comfort.",
     duration: "1–2 Days",
     visits: "1–2 Visits",
-    startingPrice: "$150",
-    internationalAveragePrice: "$900",
-    image: images.clinic.xray,
+    startingPrice: "$40",
+    startingPriceUSD: 40,
+    image: images.treatments.rootCanal,
     category: "smile-makeover",
     whatsIncluded: [
       "Diagnostic imaging",
@@ -136,43 +98,106 @@ export const treatments: Treatment[] = [
     ],
   },
   {
-    slug: "cosmetic-dentistry",
-    name: "Cosmetic Dentistry",
+    slug: "dental-crown",
+    name: "Crown (Zirconia/Ceramic)",
     shortDescription:
-      "Whitening, bonding and contouring treatments designed around your ideal smile.",
+      "Durable, natural-looking crowns that restore strength and shape to a damaged tooth.",
     description:
-      "From professional whitening to subtle reshaping, our cosmetic dentistry treatments are tailored to enhance your natural smile with results that look effortless.",
-    duration: "2–4 Days",
-    visits: "1–2 Visits",
-    startingPrice: "$180",
-    internationalAveragePrice: "$650",
-    image: images.clinic.closeupSmile,
+      "Zirconia and ceramic crowns restore strength, shape and function to damaged or heavily decayed teeth using durable, metal-free materials matched precisely to your smile.",
+    duration: "4–5 Days",
+    visits: "2 Visits",
+    startingPrice: "$80 / tooth",
+    startingPriceUSD: 80,
+    priceUnit: "tooth",
+    image: images.treatments.dentalCrown,
     category: "veneers",
     whatsIncluded: [
-      "Personalized smile assessment",
-      "Whitening and/or bonding",
-      "Shade matching and polish",
+      "Precision digital impressions",
+      "Metal-free zirconia/ceramic crown",
+      "Bite and comfort calibration",
+      "Long-term warranty guidance",
+    ],
+  },
+  {
+    slug: "tooth-extraction",
+    name: "Tooth Extraction",
+    shortDescription:
+      "Safe, comfortable removal of damaged, infected or impacted teeth.",
+    description:
+      "When a tooth can't be saved, our specialists perform safe, minimally uncomfortable extractions using modern techniques, with clear aftercare guidance to support fast healing.",
+    duration: "Same Day",
+    visits: "1 Visit",
+    startingPrice: "$10 / tooth",
+    startingPriceUSD: 10,
+    priceUnit: "tooth",
+    image: images.treatments.toothExtraction,
+    category: "smile-makeover",
+    whatsIncluded: [
+      "Diagnostic imaging",
+      "Local anesthesia for comfort",
+      "Safe tooth removal",
+      "Aftercare and healing guidance",
+    ],
+  },
+  {
+    slug: "dental-implant",
+    name: "Dental Implant (Single Tooth)",
+    shortDescription:
+      "A permanent, natural-looking solution for a single missing tooth using a titanium implant.",
+    description:
+      "A single-tooth dental implant replaces a missing tooth from the root up, giving you a permanent, natural-looking result that restores confidence and function. Our partner clinics use advanced 3D imaging and premium implant systems trusted by dentists worldwide.",
+    duration: "7–10 Days",
+    visits: "2–3 Visits",
+    startingPrice: "$250 / tooth",
+    startingPriceUSD: 250,
+    priceUnit: "tooth",
+    image: images.treatments.dentalImplant,
+    category: "implants",
+    whatsIncluded: [
+      "Comprehensive diagnostic scans (CT/X-ray)",
+      "Premium titanium implant placement",
+      "Personal treatment coordinator",
+      "Post-treatment care kit and guidance",
+    ],
+  },
+  {
+    slug: "teeth-whitening",
+    name: "Teeth Whitening",
+    shortDescription:
+      "Professional-grade whitening for a noticeably brighter smile in one visit.",
+    description:
+      "Our in-clinic whitening treatment lifts years of staining from coffee, tea and everyday life, delivering a safe, noticeably brighter smile in a single session under professional supervision.",
+    duration: "1 Day",
+    visits: "1 Visit",
+    startingPrice: "$40",
+    startingPriceUSD: 40,
+    image: images.treatments.teethWhitening,
+    category: "veneers",
+    whatsIncluded: [
+      "Shade assessment and consultation",
+      "Professional-grade whitening treatment",
+      "Sensitivity management",
       "Take-home maintenance kit",
     ],
   },
   {
-    slug: "smile-makeover",
-    name: "Smile Makeover",
+    slug: "braces",
+    name: "Braces (Full Treatment)",
     shortDescription:
-      "A fully personalized combination of treatments designed around your ideal smile.",
+      "A complete orthodontic treatment plan to align and straighten your smile.",
     description:
-      "A smile makeover blends multiple treatments — veneers, whitening, contouring and more — planned together for a cohesive, natural transformation designed around your face and goals.",
-    duration: "6–8 Days",
-    visits: "2–3 Visits",
-    startingPrice: "$1,800",
-    internationalAveragePrice: "$8,000",
-    image: images.clinic.interior,
+      "Whether you choose traditional braces or clear aligners, our orthodontic specialists design a complete treatment plan to gradually straighten your teeth and correct your bite, with regular progress reviews throughout.",
+    duration: "12–18 Months",
+    visits: "Multiple Visits",
+    startingPrice: "$500",
+    startingPriceUSD: 500,
+    image: images.treatments.braces,
     category: "smile-makeover",
     whatsIncluded: [
-      "Digital smile design preview",
-      "Multi-treatment coordinated plan",
-      "Dedicated treatment coordinator",
-      "Before and after documentation",
+      "Full orthodontic assessment",
+      "Custom-fitted braces or aligners",
+      "Scheduled adjustment visits",
+      "Retainer after treatment completion",
     ],
   },
 ];

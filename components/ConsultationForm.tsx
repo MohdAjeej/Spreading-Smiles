@@ -14,11 +14,12 @@ const steps = [
 ];
 
 const treatmentOptions = [
-  "Dental Implants",
-  "Veneers",
-  "Smile Makeover",
-  "Full Mouth Rehabilitation",
-  "Crowns",
+  "Consultation",
+  "Dental Cleaning",
+  "Tooth Filling",
+  "Tooth Extraction",
+  "Teeth Whitening",
+  "Braces",
   "Other",
 ];
 

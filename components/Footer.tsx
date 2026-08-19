@@ -11,10 +11,10 @@ const socialIcons = {
 };
 
 const treatmentLinks = [
-  { label: "Dental Implants", href: "/treatments/dental-implants" },
-  { label: "Veneers", href: "/treatments/veneers" },
-  { label: "Crowns & Bridges", href: "/treatments/crowns-bridges" },
-  { label: "Smile Makeover", href: "/treatments/smile-makeover" },
+  { label: "Consultation", href: "/treatments/consultation" },
+  { label: "Teeth Whitening", href: "/treatments/teeth-whitening" },
+  { label: "Tooth Filling", href: "/treatments/tooth-filling" },
+  { label: "Braces", href: "/treatments/braces" },
 ];
 
 const tourismLinks = [

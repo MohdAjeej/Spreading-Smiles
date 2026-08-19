@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 import { getTreatmentBySlug } from "@/data/treatments";
 
 export default function FeaturedTreatment() {
-  const treatment = getTreatmentBySlug("dental-implants")!;
+  const treatment = getTreatmentBySlug("braces")!;
 
   return (
     <section className="py-24">
@@ -43,7 +43,7 @@ export default function FeaturedTreatment() {
               {treatment.name}
             </h2>
             <p className="mt-4 text-lg text-navy-soft">
-              A permanent solution for a confident, natural-looking smile.
+              A complete orthodontic plan to align and straighten your smile.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-4 border-y border-navy/10 py-6">

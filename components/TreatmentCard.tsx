@@ -2,16 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import type { Treatment } from "@/data/treatments";
+import type { CurrencyOption } from "@/data/currencies";
+import { pricingData } from "@/data/pricing";
+import { formatPrice } from "@/lib/currency";
 
 export default function TreatmentCard({
   treatment,
   index = 0,
+  currency,
 }: {
   treatment: Treatment;
   index?: number;
+  currency: CurrencyOption;
 }) {
   return (
     <motion.div
@@ -51,7 +56,24 @@ export default function TreatmentCard({
           </div>
           <div className="text-right">
             <p className="text-[11px] uppercase tracking-wide text-navy-soft/70">From</p>
-            <p className="font-serif text-lg text-pink">{treatment.startingPrice}</p>
+            <p className="font-serif text-lg text-pink">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={currency.countryCode}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="inline-block"
+                >
+                  {formatPrice(
+                    pricingData[treatment.slug][currency.countryCode].min,
+                    currency,
+                    treatment.priceUnit,
+                  )}
+                </motion.span>
+              </AnimatePresence>
+            </p>
           </div>
         </div>
 

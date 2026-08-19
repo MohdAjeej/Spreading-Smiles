@@ -124,6 +124,16 @@ export const images = {
   dentists: {
     d1: { src: "/dr-swati-singhal.jpeg", alt: "Portrait of Dr. Swati S. Singhal" } satisfies ImageAsset,
   },
+  treatments: {
+    braces: { src: "/treatments/braces.jpg", alt: "Orthodontist adjusting braces on a patient's teeth" } satisfies ImageAsset,
+    dentalCrown: { src: "/treatments/dental-crown.jpeg", alt: "3D illustration of a dental crown being fitted over a tooth" } satisfies ImageAsset,
+    dentalCleaning: { src: "/treatments/dental-cleaning.jpg", alt: "Professional dental cleaning and scaling in progress" } satisfies ImageAsset,
+    dentalImplant: { src: "/treatments/dental-implant.jpg", alt: "Dental implant procedure on a single tooth" } satisfies ImageAsset,
+    rootCanal: { src: "/treatments/root-canal.jpg", alt: "Root canal treatment being performed by a dentist" } satisfies ImageAsset,
+    teethWhitening: { src: "/treatments/teeth-whitening.jpg", alt: "Teeth whitening treatment for a brighter smile" } satisfies ImageAsset,
+    toothExtraction: { src: "/treatments/tooth-extraction.jpg", alt: "Dentist performing a tooth extraction" } satisfies ImageAsset,
+    toothFilling: { src: "/treatments/tooth-filling.jpg", alt: "Composite tooth filling procedure" } satisfies ImageAsset,
+  },
   patients: {
     p1: { src: unsplash("photo-1633332755192-727a05c4013d", 400), alt: "Portrait of James, a patient from the UK" } satisfies ImageAsset,
     p2: { src: unsplash("photo-1552058544-f2b08422138a", 400), alt: "Portrait of Michael, a patient from the UK" } satisfies ImageAsset,
