@@ -58,8 +58,9 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-6 max-w-md text-balance text-base text-white/90 sm:text-lg"
             >
-              World-class dental care in India, combined with personalized travel
-              support for international patients.
+            World-Class Dental Treatment. Royal Indian Hospitality. Exceptional Value.
+
+Experience international-grade dental care combined with an unforgettable royal travel experience in India — at a fraction of the cost.
             </motion.p>
 
             <motion.div

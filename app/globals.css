@@ -3,14 +3,14 @@
 :root {
   --color-navy: #2b2a4c;
   --color-navy-soft: #6f6d8c;
-  --color-pink: #3bf0bd;
-  --color-pink-dark: #19daa4;
-  --color-pink-light: #edfdf8;
+  --color-pink: #3b82f6;
+  --color-pink-dark: #2563eb;
+  --color-pink-light: #dbeafe;
   --color-blush: #fce6ee;
   --color-blush-dark: #f8d0de;
-  --color-blue: #3f7de0;
-  --color-blue-dark: #2f63bd;
-  --color-gold: #e8b54a;
+  --color-blue: #3b82f6;
+  --color-blue-dark: #2563eb;
+  --color-gold: #dc2626;
 }
 
 @theme inline {
@@ -69,4 +69,137 @@ body {
 .dot-pattern {
   background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
   background-size: 16px 16px;
+}
+
+
+/* Blog Article Prose Styles */
+.prose {
+  color: var(--color-navy);
+  max-width: 65ch;
+}
+
+.prose h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.prose h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.prose h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: var(--color-navy-soft);
+}
+
+.prose strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+  color: var(--color-navy-soft);
+}
+
+.prose ul > li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.prose ul > li::marker {
+  color: var(--color-pink);
+}
+
+.prose ol > li::marker {
+  color: var(--color-pink);
+  font-weight: 600;
+}
+
+.prose table {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.prose thead {
+  border-bottom: 2px solid var(--color-navy);
+}
+
+.prose thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.prose tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(43, 42, 76, 0.1);
+}
+
+.prose a {
+  color: var(--color-pink);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: var(--color-pink-dark);
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose-lg h2 {
+  font-size: 2.25rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.prose-lg h3 {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-lg p {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }

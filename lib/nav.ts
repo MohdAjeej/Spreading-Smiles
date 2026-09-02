@@ -5,6 +5,7 @@ export const navLinks = [
   { label: "Dentists", href: "/dentists" },
   { label: "Patient Stories", href: "/patient-stories" },
   { label: "Case Study", href: "/case-study" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -16,8 +17,8 @@ export const brand = {
   phoneHref: "tel:+919560035488",
   whatsapp: "+91 95600 35488",
   whatsappHref: "https://wa.me/919560035488",
-  email: "drswatisinghal32@gmail.com",
-  address: "Wave City Centre, Sector 25, Noida, Uttar Pradesh, India",
+  email: "Dr.Swati@ihp.ind.in",
+  address: "Wave City Centre, Sector 32, Noida, Uttar Pradesh, India",
   hours: "Mon – Sat, 10AM – 8PM",
   emergencyNote: "Sunday by appointment",
 };

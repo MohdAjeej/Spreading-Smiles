@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Testimonials from "@/components/Testimonials";
+import PatientStoriesVideos from "@/components/PatientStoriesVideos";
+import ProceduresVideos from "@/components/ProceduresVideos";
+import HealthyTipsVideos from "@/components/HealthyTipsVideos";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import { images } from "@/lib/images";
@@ -20,6 +23,9 @@ export default function PatientStoriesPage() {
         subtitle="Honest reflections from patients who combined premium dental care with a journey to India."
         image={images.clinic.closeupSmile}
       />
+      <PatientStoriesVideos />
+      <ProceduresVideos />
+      <HealthyTipsVideos />
       <Testimonials />
       <BeforeAfter />
       <CTASection />

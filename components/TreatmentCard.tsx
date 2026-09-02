@@ -49,31 +49,10 @@ export default function TreatmentCard({
           {treatment.shortDescription}
         </p>
 
-        <div className="mt-5 flex items-center justify-between border-t border-navy/10 pt-4">
+        <div className="mt-5 flex items-center border-t border-navy/10 pt-4">
           <div className="flex items-center gap-1.5 text-xs text-navy-soft">
             <Clock size={14} className="text-pink" />
             {treatment.duration}
-          </div>
-          <div className="text-right">
-            <p className="text-[11px] uppercase tracking-wide text-navy-soft/70">From</p>
-            <p className="font-serif text-lg text-pink">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                  key={currency.countryCode}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                  className="inline-block"
-                >
-                  {formatPrice(
-                    pricingData[treatment.slug][currency.countryCode].min,
-                    currency,
-                    treatment.priceUnit,
-                  )}
-                </motion.span>
-              </AnimatePresence>
-            </p>
           </div>
         </div>
 

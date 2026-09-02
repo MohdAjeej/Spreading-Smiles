@@ -10,7 +10,7 @@ import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import MobileMenu from "@/components/MobileMenu";
 import { navLinks, brand } from "@/lib/nav";
-import logo from "@/app/assets/logo.jpg";
+import logo from "@/app/assets/logo.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

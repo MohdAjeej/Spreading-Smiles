@@ -7,7 +7,7 @@ import Container from "@/components/ui/Container";
 import SectionWave from "@/components/SectionWave";
 import { images } from "@/lib/images";
 
-const PINK = "#3bf0bd";
+const PINK = "#3b82f6";
 
 const perks = [
   { icon: Plane, label: "Travel Planning" },

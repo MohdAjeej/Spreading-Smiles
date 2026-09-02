@@ -40,17 +40,6 @@ export default function TreatmentGrid({
           <SectionHeading eyebrow={eyebrow} heading={heading} subtitle={subtitle} />
         )}
 
-        <div className="mt-10 flex flex-col items-center justify-end gap-4 sm:flex-row">
-          <p className="text-sm font-medium text-navy-soft">
-            Show prices in your currency
-          </p>
-          <CurrencySelector
-            value={currency}
-            onChange={setCurrency}
-            label="Select country for pricing"
-          />
-        </div>
-
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {treatments.map((treatment, i) => (
             <TreatmentCard

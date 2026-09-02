@@ -60,14 +60,22 @@ export const images = {
       src: unsplash("photo-1607613009820-a29f7bb81c04"),
       alt: "Bamboo toothbrushes representing dental hygiene and aftercare",
     } satisfies ImageAsset,
+    map: {
+      src: "/map.jpeg",
+      alt: "World map showing international patients from across the globe choosing Spreading Smiles in Noida, India",
+    } satisfies ImageAsset,
+    pricing: {
+      src: "/pricing qw.jpeg",
+      alt: "Dental treatment pricing comparison chart showing savings",
+    } satisfies ImageAsset,
   },
   india: {
     tajMahal: {
-      src: unsplash("photo-1587474260584-136574528ed5"),
+      src: unsplash("photo-1564507592333-c60657eea523"),
       alt: "The Taj Mahal, one of India's iconic landmarks",
     } satisfies ImageAsset,
     tajMahalWater: {
-      src: unsplash("photo-1477587458883-47145ed94245"),
+      src: unsplash("photo-1564507592333-c60657eea523"),
       alt: "The Taj Mahal reflected in water at sunrise",
     } satisfies ImageAsset,
     cityLife: {
@@ -85,6 +93,14 @@ export const images = {
     monument: {
       src: unsplash("photo-1570168007204-dfb528c6958f"),
       alt: "Historic Indian architecture and monuments",
+    } satisfies ImageAsset,
+    hawaMahal: {
+      src: "/jaipur.jpg",
+      alt: "Hawa Mahal (Palace of Winds) in Jaipur, the Pink City",
+    } satisfies ImageAsset,
+    mathuraVrindavan: {
+      src: "/mathura.jpg",
+      alt: "Illuminated temple at night in Mathura and Vrindavan",
     } satisfies ImageAsset,
   },
   travel: {

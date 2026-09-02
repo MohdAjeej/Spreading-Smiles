@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 import SectionWave from "@/components/SectionWave";
 import { brand } from "@/lib/nav";
 
-const PINK = "#3bf0bd";
+const PINK = "#3b82f6";
 
 function inputClasses() {
   return "w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-pink";
