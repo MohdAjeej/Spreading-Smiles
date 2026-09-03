@@ -1,0 +1,12 @@
+Please add the following blog images to this folder:
+
+1. root-canaling.jpeg - For "How to Know If You Need a Root Canal" blog post
+2. root-procedure.jpeg - For "Root Canal Treatment: Step-by-Step" blog post  
+3. gum-disease.jpeg - For "Stages of Gum Disease" blog post
+4. gums.jpeg - For "Scaling and Root Planing" blog post
+5. tooth.jpeg - For "Healthy Gums vs Diseased Gums" blog post
+
+Recommended image size: 1200x675 pixels (16:9 aspect ratio)
+Format: JPEG
+
+Until these images are added, the blog posts will use placeholder dental images from the treatments folder.
