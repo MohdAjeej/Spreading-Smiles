@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     root: path.join(__dirname),
 
   },
-  // basePath: "/spreadingSmiles",
+  basePath: "/spreadingSmiles",
 
-  // trailingSlash: true,
+  trailingSlash: true,
 
   images: {
     remotePatterns: [

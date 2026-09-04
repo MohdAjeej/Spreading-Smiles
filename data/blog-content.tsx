@@ -1,7 +1,7 @@
 // Note: Due to file size, content for existing blogs (dental-implants-vs-bridges and braces-vs-clear-aligners) 
 // has been preserved from the original file. New blog content is added below.
 
-export const newBlogContent = {
+export const blogContent = {
   "how-to-know-if-you-need-root-canal": {
     content: (
       <>
