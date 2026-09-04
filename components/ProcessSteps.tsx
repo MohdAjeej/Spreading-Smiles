@@ -1,63 +1,63 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Search, FileText, Plane, Sparkles, HeartPulse, CheckCircle2, CreditCard, ArrowRight } from "lucide-react";
+import { PhoneCall, Stethoscope, FileCheck2, PlaneTakeoff, Award, ShieldCheck, CheckCircle2, CreditCard, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 
 const steps = [
   {
     number: 1,
-    icon: MessageCircle,
+    icon: PhoneCall,
     title: "Get in Touch",
     description: "Connect with our International Dental Tourism Team.",
     highlight: "No card payment required",
-    color: "bg-blue",
+    color: "bg-gradient-to-br from-blue to-blue-dark",
     lightColor: "bg-blue/10",
     textColor: "text-blue",
   },
   {
     number: 2,
-    icon: Search,
+    icon: Stethoscope,
     title: "Preoperative Assessment",
     description: "Virtual Dental Assessment with our dental team. Share your concerns and diagnostic reports.",
-    color: "bg-pink",
+    color: "bg-gradient-to-br from-pink to-pink-dark",
     lightColor: "bg-pink/10",
     textColor: "text-pink",
   },
   {
     number: 3,
-    icon: FileText,
+    icon: FileCheck2,
     title: "Treatment Proposal + Travel Itinerary",
     description: "Receive personalized treatment plan, cost proposal and customized travel itinerary.",
-    color: "bg-gold",
+    color: "bg-gradient-to-br from-gold to-[#b91c1c]",
     lightColor: "bg-gold/10",
     textColor: "text-gold",
   },
   {
     number: 4,
-    icon: Plane,
+    icon: PlaneTakeoff,
     title: "Payment + Travel Arrangements",
     description: "We assist with payment, travel bookings, airport transfers and hotel accommodation.",
-    color: "bg-blue-dark",
+    color: "bg-gradient-to-br from-blue-dark to-[#1e40af]",
     lightColor: "bg-blue-dark/10",
     textColor: "text-blue-dark",
   },
   {
     number: 5,
-    icon: Sparkles,
+    icon: Award,
     title: "Dental Treatment + Royal Experience",
     description: "International-grade treatment with Royal Indian Travel Experience and wellness.",
-    color: "bg-pink",
+    color: "bg-gradient-to-br from-pink to-[#ec4899]",
     lightColor: "bg-pink/10",
     textColor: "text-pink",
   },
   {
     number: 6,
-    icon: HeartPulse,
+    icon: ShieldCheck,
     title: "Postoperative Care + Follow-Up",
     description: "Postoperative care, virtual follow-ups and ongoing support for smooth recovery.",
-    color: "bg-blue",
+    color: "bg-gradient-to-br from-blue to-[#0ea5e9]",
     lightColor: "bg-blue/10",
     textColor: "text-blue",
   },
@@ -106,7 +106,7 @@ export default function ProcessSteps() {
         </motion.div>
 
         {/* Process Steps Grid */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
@@ -114,34 +114,34 @@ export default function ProcessSteps() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl border-2 border-navy/10 bg-white p-6 shadow-sm transition-all duration-300 hover:border-pink/30 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-xl border-2 border-navy/10 bg-white p-4 shadow-sm transition-all duration-300 hover:border-pink/30 hover:shadow-xl"
             >
               {/* Step Number Badge - Top Right */}
-              <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-blush">
-                <span className="font-serif text-lg font-bold text-pink">
+              <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-blush">
+                <span className="font-serif text-xs font-bold text-pink">
                   {step.number}
                 </span>
               </div>
 
               {/* Icon */}
-              <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl ${step.color} shadow-lg transition-transform duration-300 group-hover:scale-110`}>
-                <step.icon size={28} className="text-white" strokeWidth={2} />
+              <div className={`inline-flex h-14 w-14 items-center justify-center rounded-xl ${step.color} shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:rotate-3`}>
+                <step.icon size={24} className="text-white" strokeWidth={2.5} />
               </div>
 
               {/* Content */}
-              <div className="mt-5">
-                <h3 className="font-serif text-xl font-semibold text-navy">
+              <div className="mt-3">
+                <h3 className="font-serif text-base font-semibold text-navy">
                   {step.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-navy-soft">
+                <p className="mt-2 text-xs leading-relaxed text-navy-soft">
                   {step.description}
                 </p>
 
                 {step.highlight && (
-                  <div className={`mt-4 inline-flex items-center gap-2 rounded-full ${step.lightColor} px-4 py-2`}>
-                    <CreditCard size={16} className={step.textColor} />
-                    <span className={`text-xs font-semibold ${step.textColor}`}>
+                  <div className={`mt-2 inline-flex items-center gap-1 rounded-full ${step.lightColor} px-2.5 py-1`}>
+                    <CreditCard size={12} className={step.textColor} />
+                    <span className={`text-[10px] font-semibold ${step.textColor}`}>
                       {step.highlight}
                     </span>
                   </div>
