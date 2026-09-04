@@ -24,35 +24,21 @@ export default function ReferFriend() {
     <section className="bg-white py-24">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="relative mx-auto aspect-square w-full max-w-md">
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-blue"
-              style={{ borderRadius: "62% 38% 34% 66% / 58% 32% 68% 42%" }}
-            />
-            <div
-              aria-hidden
-              className="absolute -right-4 top-6 h-16 w-16 rounded-full border-2 border-blue/30"
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="absolute inset-[14%] overflow-hidden rounded-[2.5rem] shadow-xl"
-            >
-              <Image
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative mx-auto w-full max-w-lg"
+          >
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl">
+              <img
                 src={images.travel.giftBoxes.src}
                 alt={images.travel.giftBoxes.alt}
-                fill
-                sizes="(max-width: 1024px) 70vw, 320px"
-                className="object-cover"
+                className="w-full h-auto object-cover"
               />
-            </motion.div>
-            <div className="absolute bottom-4 right-2 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg">
-              <Gift size={24} className="text-blue" />
             </div>
-          </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}

@@ -80,6 +80,7 @@ export default function LocationMap() {
                 src={images.clinic.map.src}
                 alt={images.clinic.map.alt}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>

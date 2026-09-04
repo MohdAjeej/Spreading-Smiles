@@ -133,12 +133,12 @@ export const images = {
       alt: "Patient having an online video consultation before travel",
     } satisfies ImageAsset,
     giftBoxes: {
-      src: unsplash("photo-1607344645866-009c320b63e0"),
-      alt: "Wrapped gift boxes representing the patient referral reward",
+      src: "/spreadingSmiles/gifting.jpeg",
+      alt: "Black gift boxes with golden ribbons representing the patient referral reward",
     } satisfies ImageAsset,
   },
   dentists: {
-    d1: { src: "/spreadingSmiles/dr-swati-singhal.jpeg", alt: "Portrait of Dr. Swati S. Singhal" } satisfies ImageAsset,
+    d1: { src: "/spreadingSmiles/CEO image.jpeg", alt: "Portrait of Dr. Swati S. Singhal" } satisfies ImageAsset,
 
     d2: { src: "/spreadingSmiles/dentist.jpeg", alt: "Portrait of Dr. Shalini Upadhyay" } satisfies ImageAsset,
   },

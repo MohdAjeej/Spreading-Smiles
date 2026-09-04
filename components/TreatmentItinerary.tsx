@@ -176,9 +176,9 @@ export default function TreatmentItinerary() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full"
           >
-            <h3 className="font-serif text-xl text-navy mb-4 flex-shrink-0">
+            <h4 className="font-serif text-2xl text-navy mb-4 flex-shrink-0 font-extrabold">
               Complete 7-Day Itinerary
-            </h3>
+            </h4>
             <div className="space-y-2 flex-1">
               {itinerary.map((day) => (
                 <div
