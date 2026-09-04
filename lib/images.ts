@@ -61,11 +61,11 @@ export const images = {
       alt: "Bamboo toothbrushes representing dental hygiene and aftercare",
     } satisfies ImageAsset,
     map: {
-      src: "/map.jpeg",
+      src: "/spreadingSmiles/map.jpeg",
       alt: "World map showing international patients from across the globe choosing Spreading Smiles in Noida, India",
     } satisfies ImageAsset,
     pricing: {
-      src: "/pricing qw.jpeg",
+      src: "/spreadingSmiles/pricing qw.jpeg",
       alt: "Dental treatment pricing comparison chart showing savings",
     } satisfies ImageAsset,
   },
@@ -95,11 +95,11 @@ export const images = {
       alt: "Historic Indian architecture and monuments",
     } satisfies ImageAsset,
     hawaMahal: {
-      src: "/jaipur.jpg",
+      src: "/spreadingSmiles/jaipur.jpg",
       alt: "Hawa Mahal (Palace of Winds) in Jaipur, the Pink City",
     } satisfies ImageAsset,
     mathuraVrindavan: {
-      src: "/mathura.jpg",
+      src: "/spreadingSmiles/mathura.jpg",
       alt: "Illuminated temple at night in Mathura and Vrindavan",
     } satisfies ImageAsset,
   },
@@ -139,6 +139,10 @@ export const images = {
   },
   dentists: {
     d1: { src: "/spreadingSmiles/dr-swati-singhal.jpeg", alt: "Portrait of Dr. Swati S. Singhal" } satisfies ImageAsset,
+<<<<<<< HEAD
+=======
+    d2: { src: "/spreadingSmiles/dentist.jpeg", alt: "Portrait of Dr. Shalini Upadhyay" } satisfies ImageAsset,
+>>>>>>> a376de3b288a5baf20863a80402c5c09411dafce
   },
   treatments: {
     braces: { src: "/spreadingSmiles/treatments/braces.jpg", alt: "Orthodontist adjusting braces on a patient's teeth" } satisfies ImageAsset,

@@ -39,7 +39,7 @@ const contactDetails = [
 
 export default function LocationMap() {
   return (
-    <section className="relative bg-blush py-24">
+    <section className="relative bg-blush py-12">
       <Container>
         <div className="text-center">
           <motion.div
@@ -48,13 +48,13 @@ export default function LocationMap() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-semibold uppercase tracking-wide text-pink">
+            <span className="text-xs font-semibold uppercase tracking-wide text-pink">
               Global Reach, Local Care
             </span>
-            <h2 className="mt-3 font-serif text-4xl text-navy sm:text-5xl">
+            <h2 className="mt-2 font-serif text-2xl text-navy sm:text-3xl">
               Welcoming Patients from Around the World
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-balance text-lg text-navy-soft">
+            <p className="mx-auto mt-2 max-w-2xl text-balance text-sm text-navy-soft">
               Our clinic in Wave City Centre, Sector 32, Noida serves international
               patients. Conveniently located with easy access
               from Delhi NCR and international airports.
@@ -62,21 +62,19 @@ export default function LocationMap() {
           </motion.div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-2xl shadow-2xl"
+            className="relative overflow-hidden rounded-xl shadow-xl"
           >
             <div className="relative aspect-[16/10] w-full">
-              <Image
+              <img
                 src={images.clinic.map.src}
                 alt={images.clinic.map.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </motion.div>
@@ -88,7 +86,7 @@ export default function LocationMap() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="space-y-6">
+            <div className="space-y-3">
               {contactDetails.map((detail, index) => (
                 <motion.div
                   key={detail.label}
@@ -96,24 +94,24 @@ export default function LocationMap() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="flex items-start gap-3 rounded-lg bg-white p-4 shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-pink-light ${detail.color}`}>
-                    <detail.icon size={20} strokeWidth={1.75} />
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-pink-light ${detail.color}`}>
+                    <detail.icon size={18} strokeWidth={1.75} />
                   </span>
                   <div className="flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-navy-soft">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-navy-soft">
                       {detail.label}
                     </p>
                     {detail.href ? (
                       <a
                         href={detail.href}
-                        className="mt-1 block text-base font-medium text-navy transition-colors hover:text-pink"
+                        className="mt-0.5 block text-sm font-medium text-navy transition-colors hover:text-pink"
                       >
                         {detail.value}
                       </a>
                     ) : (
-                      <p className="mt-1 text-base font-medium text-navy">
+                      <p className="mt-0.5 text-sm font-medium text-navy">
                         {detail.value}
                       </p>
                     )}
@@ -122,11 +120,11 @@ export default function LocationMap() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact" variant="primary" size="lg">
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/contact" variant="primary" size="md">
                 Get Directions
               </Button>
-              <Button href="/book-consultation" variant="secondary" size="lg">
+              <Button href="/book-consultation" variant="secondary" size="md">
                 Book Appointment
               </Button>
             </div>
