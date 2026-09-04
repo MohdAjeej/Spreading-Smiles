@@ -19,7 +19,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-pink pb-28 pt-8 sm:pb-36 sm:pt-10">
+    <section className="relative overflow-hidden bg-pink pb-16 pt-6 sm:pb-20 sm:pt-8">
       <div
         aria-hidden
         className="dot-pattern pointer-events-none absolute left-6 top-24 h-32 w-32 text-white/25 sm:left-12"
@@ -30,14 +30,14 @@ export default function Hero() {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-8">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-6">
           <div>
             <motion.h1
               custom={0}
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="font-serif text-3xl leading-tight text-navy sm:text-4xl"
+              className="font-serif text-2xl leading-tight text-navy sm:text-3xl"
             >
               Your New Smile.
             </motion.h1>
@@ -46,7 +46,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="hero-heading text-balance font-serif font-bold text-white"
+              className="text-4xl sm:text-5xl text-balance font-serif font-bold text-white"
             >
               Starts Here.
             </motion.p>
@@ -56,7 +56,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-6 max-w-md text-balance text-base text-white/90 sm:text-lg"
+              className="mt-4 max-w-md text-balance text-sm text-white/90 sm:text-base"
             >
             World-Class Dental Treatment. Royal Indian Hospitality. Exceptional Value.
 
@@ -68,12 +68,12 @@ Experience international-grade dental care combined with an unforgettable royal 
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-9 flex flex-wrap items-center gap-5"
+              className="mt-6 flex flex-wrap items-center gap-3"
             >
-              <Button href="/book-consultation" variant="white" size="lg">
+              <Button href="/book-consultation" variant="white" size="md">
                 Start Your Dental Journey
               </Button>
-              <Button href="/treatments" variant="ghost-light" size="lg">
+              <Button href="/treatments" variant="ghost-light" size="md">
                 Explore Treatments
               </Button>
             </motion.div>
@@ -83,11 +83,11 @@ Experience international-grade dental care combined with an unforgettable royal 
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="mt-10 flex items-center gap-2"
+              className="mt-6 flex items-center gap-2"
             >
               <div className="flex gap-0.5 text-gold">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
+                  <Star key={i} size={12} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
               <span className="text-xs font-medium text-white/85">
@@ -112,8 +112,8 @@ Experience international-grade dental care combined with an unforgettable royal 
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white px-6 py-4 shadow-xl sm:block">
-              <p className="font-serif text-2xl text-pink">30–70%</p>
+            <div className="absolute -bottom-4 -left-4 hidden rounded-2xl bg-white px-4 py-3 shadow-xl sm:block">
+              <p className="font-serif text-xl text-pink">30–70%</p>
               <p className="text-xs text-navy-soft">Potential Treatment Savings</p>
             </div>
           </motion.div>

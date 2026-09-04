@@ -40,7 +40,7 @@ const services = [
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-8">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -52,18 +52,18 @@ export default function ServicesGrid() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-pink">
             Our Services
           </span>
-          <h2 className="mt-3 font-serif text-4xl text-navy sm:text-5xl">
+          <h2 className="mt-2 font-serif text-2xl text-navy sm:text-3xl">
             Healthy Smiles
             <br />
             <span className="font-bold text-pink">Everyday!</span>
           </h2>
-          <p className="mt-4 text-base text-navy-soft">
+          <p className="mt-2 text-xs text-navy-soft">
             Start your day with a smile check. See how we can help with everything
             from routine care to complete transformations.
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-x-10 gap-y-12 text-center sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-6 grid max-w-4xl grid-cols-1 gap-x-6 gap-y-6 text-center sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
@@ -73,19 +73,19 @@ export default function ServicesGrid() {
               transition={{ duration: 0.4, delay: (i % 3) * 0.1 }}
               className="flex flex-col items-center"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-pink-light text-pink">
-                <service.icon size={24} strokeWidth={1.75} />
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-light text-pink">
+                <service.icon size={18} strokeWidth={1.75} />
               </span>
-              <p className="mt-4 font-serif text-lg text-navy">{service.title}</p>
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-navy-soft">
+              <p className="mt-2 font-serif text-base text-navy">{service.title}</p>
+              <p className="mt-1 max-w-[220px] text-xs leading-relaxed text-navy-soft">
                 {service.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-14 text-center">
-          <Button href="/treatments" variant="primary" size="lg">
+        <div className="mt-6 text-center">
+          <Button href="/treatments" variant="primary" size="md">
             Full List Of Services
           </Button>
         </div>

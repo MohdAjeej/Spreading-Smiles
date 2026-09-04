@@ -120,7 +120,7 @@ export default function TreatmentItinerary() {
   // Scroll to current card
   useEffect(() => {
     if (scrollContainerRef.current) {
-      const cardWidth = 320 + 24; // card width + gap
+      const cardWidth = 320 + 16; // card width + gap (reduced from 24 to 16)
       scrollContainerRef.current.scrollTo({
         left: currentIndex * cardWidth,
         behavior: 'smooth',
@@ -167,26 +167,68 @@ export default function TreatmentItinerary() {
           </p>
         </motion.div>
 
-        <div className="relative mt-16">
-          {/* Navigation Buttons */}
-          <button
-            onClick={handlePrevious}
-            className="absolute -left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:bg-pink hover:text-white"
-            aria-label="Previous day"
+        <div className="mt-16 grid grid-cols-1  lg:grid-cols-2 gap-8  items-stretch">
+          {/* Left Side - 7 Day Overview */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full"
           >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute -right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:bg-pink hover:text-white"
-            aria-label="Next day"
-          >
-            <ChevronRight size={24} />
-          </button>
+            <h3 className="font-serif text-xl text-navy mb-4 flex-shrink-0">
+              Complete 7-Day Itinerary
+            </h3>
+            <div className="space-y-2 flex-1">
+              {itinerary.map((day) => (
+                <div
+                  key={day.day}
+                  className={`flex items-center gap-3 p-2.5 rounded-lg transition-all cursor-pointer ${
+                    currentIndex === day.day - 1
+                      ? 'bg-pink-light border-2 border-pink'
+                      : 'bg-blush hover:bg-pink-light/50'
+                  }`}
+                  onClick={() => setCurrentIndex(day.day - 1)}
+                >
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white shadow-md">
+                    <span className="font-serif text-[10px] font-bold text-pink leading-tight">
+                      Day {day.day}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0 flex items-center gap-2">
+                    <day.icon size={14} className={day.color} strokeWidth={1.75} />
+                    <div>
+                      <h4 className="font-serif text-sm text-navy font-semibold leading-tight">
+                        {day.title}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-          {/* Scrollable Container */}
-          <div ref={scrollContainerRef} className="overflow-x-hidden pb-4">
-            <div className="flex gap-6 px-4" style={{ width: 'max-content' }}>
+          {/* Right Side - Carousel */}
+          <div className="relative h-full mt-10 mb-10">
+            {/* Navigation Buttons */}
+            <button
+              onClick={handlePrevious}
+              className="absolute -left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:bg-pink hover:text-white"
+              aria-label="Previous day"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute -right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:bg-pink hover:text-white"
+              aria-label="Next day"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Scrollable Container */}
+            <div ref={scrollContainerRef} className="overflow-x-hidden pb-4">
+              <div className="flex gap-4" style={{ width: 'max-content' }}>
               {itinerary.map((day, index) => (
                 <motion.div
                   key={day.day}
@@ -246,6 +288,7 @@ export default function TreatmentItinerary() {
             </div>
           </div>
         </div>
+      </div>
 
         {/* Progress Dots */}
         <div className="mt-8 flex justify-center gap-2">
