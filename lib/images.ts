@@ -139,10 +139,8 @@ export const images = {
   },
   dentists: {
     d1: { src: "/spreadingSmiles/dr-swati-singhal.jpeg", alt: "Portrait of Dr. Swati S. Singhal" } satisfies ImageAsset,
-<<<<<<< HEAD
-=======
+
     d2: { src: "/spreadingSmiles/dentist.jpeg", alt: "Portrait of Dr. Shalini Upadhyay" } satisfies ImageAsset,
->>>>>>> a376de3b288a5baf20863a80402c5c09411dafce
   },
   treatments: {
     braces: { src: "/spreadingSmiles/treatments/braces.jpg", alt: "Orthodontist adjusting braces on a patient's teeth" } satisfies ImageAsset,
