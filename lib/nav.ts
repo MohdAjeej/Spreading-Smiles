@@ -1,10 +1,9 @@
 export const navLinks = [
   { label: "Treatments", href: "/treatments" },
-  { label: "Dental Tourism", href: "/dental-tourism" },
-  { label: "Why India", href: "/why-india" },
-  { label: "Dentists", href: "/dentists" },
   { label: "Patient Stories", href: "/patient-stories" },
   { label: "Case Study", href: "/case-study" },
+  { label: "Dental Tourism", href: "/dental-tourism" },
+  { label: "Itinerary", href: "/itinerary" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

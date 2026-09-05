@@ -3,14 +3,16 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Plane, Stethoscope, Castle, Church, Crown, Heart, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Plane, Stethoscope, Castle, Church, Crown, Heart, CheckCircle2, ChevronLeft, ChevronRight, Utensils } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { images } from "@/lib/images";
 
-const itinerary = [
+const itinerary7Days = [
   {
     day: 1,
+    dayRange: "1",
+    dayDisplay: "1",
     title: "Arrival in Delhi",
     icon: Plane,
     image: images.travel.airportPickup,
@@ -24,6 +26,8 @@ const itinerary = [
   },
   {
     day: 2,
+    dayRange: "2",
+    dayDisplay: "2",
     title: "Dental Consultation & Treatment",
     icon: Stethoscope,
     image: images.clinic.reception,
@@ -37,6 +41,8 @@ const itinerary = [
   },
   {
     day: 3,
+    dayRange: "3",
+    dayDisplay: "3",
     title: "Agra: The Taj Mahal",
     icon: Castle,
     image: images.india.tajMahal,
@@ -51,6 +57,8 @@ const itinerary = [
   },
   {
     day: 4,
+    dayRange: "4",
+    dayDisplay: "4",
     title: "Mathura & Vrindavan",
     icon: Church,
     image: images.india.mathuraVrindavan,
@@ -64,6 +72,8 @@ const itinerary = [
   },
   {
     day: 5,
+    dayRange: "5",
+    dayDisplay: "5",
     title: "Jaipur: The Pink City",
     icon: Crown,
     image: images.india.hawaMahal,
@@ -78,6 +88,8 @@ const itinerary = [
   },
   {
     day: 6,
+    dayRange: "6",
+    dayDisplay: "6",
     title: "Dental Treatment & Recovery",
     icon: Heart,
     image: images.clinic.treatmentRoom,
@@ -91,6 +103,8 @@ const itinerary = [
   },
   {
     day: 7,
+    dayRange: "7",
+    dayDisplay: "7",
     title: "Final Follow-Up & Departure",
     icon: CheckCircle2,
     image: images.travel.flight,
@@ -104,9 +118,234 @@ const itinerary = [
   },
 ];
 
+const itinerary10Days = [
+  {
+    day: 1,
+    dayRange: "1",
+    dayDisplay: "1",
+    title: "Arrival in Delhi",
+    icon: Plane,
+    image: images.travel.airportPickup,
+    activities: [
+      "Airport welcome & hotel check-in",
+      "Welcome dinner",
+      "Rest and recovery",
+    ],
+    color: "text-blue",
+  },
+  {
+    day: 2,
+    dayRange: "2-3",
+    dayDisplay: "2",
+    title: "Dental Consultation & Treatment",
+    icon: Stethoscope,
+    image: images.clinic.treatmentRoom,
+    activities: [
+      "Comprehensive dental consultation",
+      "Diagnostic assessment & X-rays",
+      "Treatment planning session",
+      "First treatment procedures",
+      "Progress evaluation",
+    ],
+    color: "text-pink",
+  },
+  {
+    day: 3,
+    dayRange: "4-5",
+    dayDisplay: "3",
+    title: "Agra & Mathura",
+    icon: Castle,
+    image: images.india.tajMahal,
+    activities: [
+      "Travel to Agra & Taj Mahal visit",
+      "Agra Fort exploration",
+      "Mathura & Vrindavan temples",
+      "Local cultural experiences",
+      "Return to Delhi",
+    ],
+    color: "text-gold",
+  },
+  {
+    day: 4,
+    dayRange: "6-7",
+    dayDisplay: "4",
+    title: "Jaipur: The Pink City",
+    icon: Crown,
+    image: images.india.hawaMahal,
+    activities: [
+      "Travel to Jaipur",
+      "Amber Fort & City Palace",
+      "Hawa Mahal & local markets",
+      "Handicraft shopping & cultural shows",
+      "Return to Delhi",
+    ],
+    color: "text-pink",
+  },
+  {
+    day: 5,
+    dayRange: "8",
+    dayDisplay: "5",
+    title: "Dental Treatment - Final Session",
+    icon: Heart,
+    image: images.clinic.treatmentRoom,
+    activities: [
+      "Second treatment session",
+      "Procedure completion",
+      "Recovery monitoring",
+      "Quality check",
+    ],
+    color: "text-gold",
+  },
+  {
+    day: 6,
+    dayRange: "9",
+    dayDisplay: "6",
+    title: "Leisure & Recovery",
+    icon: Utensils,
+    image: images.travel.hotelPool,
+    activities: [
+      "Spa and relaxation",
+      "Gentle sightseeing",
+      "Fine dining experience",
+      "Final preparations",
+    ],
+    color: "text-blue",
+  },
+  {
+    day: 7,
+    dayRange: "10",
+    dayDisplay: "7",
+    title: "Final Check & Departure",
+    icon: CheckCircle2,
+    image: images.travel.flight,
+    activities: [
+      "Final dental checkup",
+      "Treatment documentation",
+      "Care instructions & follow-up plan",
+      "Airport transfer",
+    ],
+    color: "text-blue",
+  },
+];
+
+const itinerary14Days = [
+  {
+    day: 1,
+    dayRange: "1",
+    dayDisplay: "1",
+    title: "Arrival in Delhi",
+    icon: Plane,
+    image: images.travel.airportPickup,
+    activities: [
+      "Airport welcome & luxury hotel check-in",
+      "Welcome dinner",
+      "Rest and recovery",
+    ],
+    color: "text-blue",
+  },
+  {
+    day: 2,
+    dayRange: "2-3",
+    dayDisplay: "2",
+    title: "Dental Consultation & Treatment Phase 1",
+    icon: Stethoscope,
+    image: images.clinic.treatmentRoom,
+    activities: [
+      "Comprehensive dental consultation",
+      "Advanced diagnostics & imaging",
+      "Detailed treatment planning",
+      "Initial treatment procedures",
+      "Progress monitoring",
+    ],
+    color: "text-pink",
+  },
+  {
+    day: 3,
+    dayRange: "4-6",
+    dayDisplay: "3",
+    title: "Agra, Fatehpur Sikri & Mathura",
+    icon: Castle,
+    image: images.india.tajMahal,
+    activities: [
+      "Taj Mahal sunrise visit & Agra Fort",
+      "Fatehpur Sikri UNESCO World Heritage site",
+      "Mathura & Vrindavan spiritual journey",
+      "Local cuisine experiences",
+      "Overnight stays included",
+    ],
+    color: "text-gold",
+  },
+  {
+    day: 4,
+    dayRange: "7",
+    dayDisplay: "4",
+    title: "Dental Treatment - Phase 2",
+    icon: Heart,
+    image: images.clinic.treatmentRoom,
+    activities: [
+      "Continued dental procedures",
+      "Progress evaluation & adjustments",
+      "Healing assessment",
+      "Wellness consultation",
+    ],
+    color: "text-pink",
+  },
+  {
+    day: 5,
+    dayRange: "8-10",
+    dayDisplay: "5",
+    title: "Jaipur & Ranthambore Experience",
+    icon: Crown,
+    image: images.india.hawaMahal,
+    activities: [
+      "Jaipur: Amber Fort, City Palace & Hawa Mahal",
+      "Local bazaars & handicraft workshops",
+      "Optional: Ranthambore wildlife safari",
+      "Traditional Rajasthani cultural evening",
+      "Return to Delhi",
+    ],
+    color: "text-pink",
+  },
+  {
+    day: 6,
+    dayRange: "11-12",
+    dayDisplay: "6",
+    title: "Dental Treatment & Delhi Sightseeing",
+    icon: Stethoscope,
+    image: images.clinic.treatmentRoom,
+    activities: [
+      "Advanced dental procedures",
+      "Final treatment adjustments",
+      "Delhi monuments: India Gate, Qutub Minar",
+      "Lotus Temple & local markets",
+      "Fine dining experiences",
+    ],
+    color: "text-gold",
+  },
+  {
+    day: 7,
+    dayRange: "13-14",
+    dayDisplay: "7",
+    title: "Wellness, Final Check & Departure",
+    icon: CheckCircle2,
+    image: images.travel.hotelPool,
+    activities: [
+      "Ayurvedic spa & wellness treatments",
+      "Final comprehensive dental checkup",
+      "Complete treatment documentation",
+      "Aftercare kit & follow-up plan",
+      "Airport transfer",
+    ],
+    color: "text-blue",
+  },
+];
+
 export default function TreatmentItinerary() {
+  const [selectedDays, setSelectedDays] = useState<7 | 10 | 14>(7);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const itinerary = selectedDays === 7 ? itinerary7Days : selectedDays === 10 ? itinerary10Days : itinerary14Days;
 
   // Auto-scroll every 4 seconds
   useEffect(() => {
@@ -115,7 +354,12 @@ export default function TreatmentItinerary() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [itinerary.length]);
+
+  // Reset currentIndex when switching itineraries
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [selectedDays]);
 
   // Scroll to current card
   useEffect(() => {
@@ -176,8 +420,36 @@ export default function TreatmentItinerary() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-lg p-6 flex flex-col h-full"
           >
+            {/* Itinerary Options */}
+            <div className="flex gap-2 mb-4 flex-shrink-0">
+              <button 
+                onClick={() => setSelectedDays(7)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  selectedDays === 7 ? 'bg-pink text-white' : 'bg-blush text-navy hover:bg-pink-light'
+                }`}
+              >
+                7 Days
+              </button>
+              <button 
+                onClick={() => setSelectedDays(10)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  selectedDays === 10 ? 'bg-pink text-white' : 'bg-blush text-navy hover:bg-pink-light'
+                }`}
+              >
+                10 Days
+              </button>
+              <button 
+                onClick={() => setSelectedDays(14)}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                  selectedDays === 14 ? 'bg-pink text-white' : 'bg-blush text-navy hover:bg-pink-light'
+                }`}
+              >
+                14 Days
+              </button>
+            </div>
+
             <h4 className="font-serif text-2xl text-navy mb-4 flex-shrink-0 font-extrabold">
-              Complete 7-Day Itinerary
+              Complete {selectedDays}-Day Itinerary
             </h4>
             <div className="space-y-2 flex-1">
               {itinerary.map((day) => (
@@ -192,7 +464,7 @@ export default function TreatmentItinerary() {
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white shadow-md">
                     <span className="font-serif text-[10px] font-bold text-pink leading-tight">
-                      Day {day.day}
+                      {day.dayRange}
                     </span>
                   </div>
                   <div className="flex-1 min-w-0 flex items-center gap-2">
@@ -239,7 +511,7 @@ export default function TreatmentItinerary() {
                   className="group relative w-80 flex-shrink-0 overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:shadow-xl"
                 >
                   {/* Image Header */}
-                  <div className="relative h-48 w-full overflow-hidden bg-blush">
+                  <div className="relative h-44 w-full overflow-hidden bg-blush">
                     <Image
                       src={day.image.src}
                       alt={day.image.alt}
@@ -253,7 +525,7 @@ export default function TreatmentItinerary() {
                     {/* Day Badge */}
                     <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg">
                       <span className="font-serif text-lg font-bold text-pink">
-                        {day.day}
+                        {day.dayDisplay}
                       </span>
                     </div>
 

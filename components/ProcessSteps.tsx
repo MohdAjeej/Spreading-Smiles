@@ -65,7 +65,7 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section className="relative overflow-hidden bg-white py-20">
+    <section className="relative overflow-hidden bg-white py-12 md:py-16">
       {/* Background decorations */}
       <div
         aria-hidden
@@ -87,60 +87,60 @@ export default function ProcessSteps() {
           <span className="text-sm font-semibold uppercase tracking-wide text-pink">
             The Process
           </span>
-          <h2 className="mt-2 font-serif text-3xl text-navy sm:text-4xl lg:text-5xl">
+          <h2 className="mt-2 font-serif text-3xl text-navy sm:text-4xl">
             Your Journey to a Perfect Smile
           </h2>
-          <div className="mx-auto mt-4 flex max-w-4xl flex-wrap items-center justify-center gap-2 text-sm text-navy-soft">
+          <div className="mx-auto mt-3 flex max-w-4xl flex-wrap items-center justify-center gap-2 text-xs text-navy-soft sm:text-sm">
             <span className="font-medium text-navy">Connect</span>
-            <ArrowRight size={16} className="text-pink" />
+            <ArrowRight size={14} className="text-pink" />
             <span className="font-medium text-navy">Assess</span>
-            <ArrowRight size={16} className="text-pink" />
+            <ArrowRight size={14} className="text-pink" />
             <span className="font-medium text-navy">Plan</span>
-            <ArrowRight size={16} className="text-pink" />
+            <ArrowRight size={14} className="text-pink" />
             <span className="font-medium text-navy">Travel</span>
-            <ArrowRight size={16} className="text-pink" />
+            <ArrowRight size={14} className="text-pink" />
             <span className="font-medium text-navy">Treat & Experience</span>
-            <ArrowRight size={16} className="text-pink" />
+            <ArrowRight size={14} className="text-pink" />
             <span className="font-medium text-navy">Follow Up</span>
           </div>
         </motion.div>
 
         {/* Process Steps Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-xl border-2 border-navy/10 bg-white p-4 shadow-sm transition-all duration-300 hover:border-pink/30 hover:shadow-xl"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group relative overflow-hidden rounded-xl border-2 border-navy/10 bg-white p-4 shadow-sm transition-all duration-300 hover:border-pink/30 hover:shadow-lg"
             >
               {/* Step Number Badge - Top Right */}
-              <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-blush">
+              <div className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-blush">
                 <span className="font-serif text-xs font-bold text-pink">
                   {step.number}
                 </span>
               </div>
 
               {/* Icon */}
-              <div className={`inline-flex h-14 w-14 items-center justify-center rounded-xl ${step.color} shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:rotate-3`}>
-                <step.icon size={24} className="text-white" strokeWidth={2.5} />
+              <div className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${step.color} shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl`}>
+                <step.icon size={22} className="text-white" strokeWidth={2.5} />
               </div>
 
               {/* Content */}
               <div className="mt-3">
-                <h3 className="font-serif text-base font-semibold text-navy">
+                <h3 className="font-serif text-sm font-semibold text-navy">
                   {step.title}
                 </h3>
 
-                <p className="mt-2 text-xs leading-relaxed text-navy-soft">
+                <p className="mt-1.5 text-xs leading-relaxed text-navy-soft">
                   {step.description}
                 </p>
 
                 {step.highlight && (
                   <div className={`mt-2 inline-flex items-center gap-1 rounded-full ${step.lightColor} px-2.5 py-1`}>
-                    <CreditCard size={12} className={step.textColor} />
+                    <CreditCard size={11} className={step.textColor} />
                     <span className={`text-[10px] font-semibold ${step.textColor}`}>
                       {step.highlight}
                     </span>
@@ -159,21 +159,21 @@ export default function ProcessSteps() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 text-center"
         >
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border-2 border-pink/20 bg-gradient-to-r from-pink/5 to-blue/5 px-6 py-3">
-            <CheckCircle2 size={20} className="text-pink" />
-            <p className="text-sm font-semibold text-navy">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full border-2 border-pink/20 bg-gradient-to-r from-pink/5 to-blue/5 px-5 py-2.5">
+            <CheckCircle2 size={18} className="text-pink" />
+            <p className="text-xs font-semibold text-navy sm:text-sm">
               Trusted by patients from <span className="text-pink">50+ countries</span>
             </p>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/book-consultation" variant="primary" size="lg">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Button href="/book-consultation" variant="primary" size="md">
               Start Your Journey
             </Button>
-            <Button href="/dental-tourism" variant="secondary" size="lg">
+            <Button href="/dental-tourism" variant="secondary" size="md">
               Learn More
             </Button>
           </div>

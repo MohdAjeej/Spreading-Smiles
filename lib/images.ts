@@ -29,7 +29,7 @@ export const images = {
       alt: "Modern dental treatment room with advanced equipment",
     } satisfies ImageAsset,
     interior: {
-      src: unsplash("photo-1584362917165-526a968579e8"),
+      src: "/spreadingSmiles/smile 23.jpeg",
       alt: "Elegant interior of a premium dental clinic",
     } satisfies ImageAsset,
     dentistAtWork: {
@@ -65,13 +65,13 @@ export const images = {
       alt: "World map showing international patients from across the globe choosing Spreading Smiles in Noida, India",
     } satisfies ImageAsset,
     pricing: {
-      src: "/spreadingSmiles/pricing qw.jpeg",
+      src: "/pricing qw.jpeg",
       alt: "Dental treatment pricing comparison chart showing savings",
     } satisfies ImageAsset,
   },
   india: {
     tajMahal: {
-      src: unsplash("photo-1564507592333-c60657eea523"),
+      src: "/spreadingSmiles/taj mahal.jpg",
       alt: "The Taj Mahal, one of India's iconic landmarks",
     } satisfies ImageAsset,
     tajMahalWater: {
@@ -121,8 +121,8 @@ export const images = {
       alt: "Airport terminal where patients are greeted on arrival",
     } satisfies ImageAsset,
     flight: {
-      src: unsplash("photo-1544620347-c4fd4a3d5957"),
-      alt: "Airplane wing above the clouds during a journey to India",
+      src: "/spreadingSmiles/carvan.png",
+      alt: "Luxury caravan for comfortable travel across India",
     } satisfies ImageAsset,
     coordinatorCall: {
       src: unsplash("photo-1521791136064-7986c2920216"),
@@ -143,6 +143,10 @@ export const images = {
     d2: { src: "/spreadingSmiles/dentist.jpeg", alt: "Portrait of Dr. Shalini Upadhyay" } satisfies ImageAsset,
   },
   treatments: {
+    dentalImplants: { src: "/spreadingSmiles/treatments/Dental implants.png", alt: "Dental implants procedure showing permanent tooth replacement" } satisfies ImageAsset,
+    fullMouthRehab: { src: "/spreadingSmiles/treatments/Full Mouth Rehabilitation.png", alt: "Full mouth rehabilitation treatment for complete restoration" } satisfies ImageAsset,
+    smileMakeover: { src: "/spreadingSmiles/treatments/Smile Makeover.png", alt: "Smile makeover with customized cosmetic treatments" } satisfies ImageAsset,
+    crownsBridges: { src: "/spreadingSmiles/treatments/Crowns & Bridges.png", alt: "Dental crowns and bridges for tooth restoration" } satisfies ImageAsset,
     braces: { src: "/spreadingSmiles/treatments/braces.jpg", alt: "Orthodontist adjusting braces on a patient's teeth" } satisfies ImageAsset,
     dentalCrown: { src: "/spreadingSmiles/treatments/dental-crown.jpeg", alt: "3D illustration of a dental crown being fitted over a tooth" } satisfies ImageAsset,
     dentalCleaning: { src: "/spreadingSmiles/treatments/dental-cleaning.jpg", alt: "Professional dental cleaning and scaling in progress" } satisfies ImageAsset,

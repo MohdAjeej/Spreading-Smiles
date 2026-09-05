@@ -10,25 +10,27 @@ export default function PageHero({
   title,
   subtitle,
   image,
+  video,
 }: {
   eyebrow: string;
   title: string;
   subtitle: string;
   image?: ImageAsset;
+  video?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-blush/60 to-white pt-16 pb-16 sm:pt-20 sm:pb-20">
       <Container>
         <div
           className={`grid grid-cols-1 items-center gap-12 ${
-            image ? "lg:grid-cols-2 lg:gap-16" : ""
+            image || video ? "lg:grid-cols-2 lg:gap-16" : ""
           }`}
         >
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={image ? "" : "mx-auto max-w-2xl text-center"}
+            className={image || video ? "" : "mx-auto max-w-2xl text-center"}
           >
             <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-pink">
               {eyebrow}
@@ -39,12 +41,29 @@ export default function PageHero({
             <p className="mt-5 text-balance text-lg text-navy-soft">{subtitle}</p>
           </motion.div>
 
-          {image && (
+          {video ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-xl"
+            >
+              <video
+                src={video}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+          ) : image ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-white shadow-xl"
             >
               <Image
                 src={image.src}
@@ -52,10 +71,10 @@ export default function PageHero({
                 fill
                 priority
                 sizes="(max-width: 1024px) 90vw, 45vw"
-                className="object-cover"
+                className="object-contain p-4"
               />
             </motion.div>
-          )}
+          ) : null}
         </div>
       </Container>
     </section>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import PatientJourney from "@/components/PatientJourney";
 import InternationalPatients from "@/components/InternationalPatients";
 import CTASection from "@/components/CTASection";
 import { images } from "@/lib/images";
@@ -19,10 +18,9 @@ export default function DentalTourismPage() {
         eyebrow="Dental Tourism"
         title="Care Without Borders"
         subtitle="Combine premium dental treatment with a seamless travel experience, guided by a dedicated coordinator every step of the way."
-        image={images.travel.hotelLobby}
+        video="/you tube.mp4"
       />
       <WhyChooseUs />
-      <PatientJourney />
       <InternationalPatients />
       <CTASection />
     </>

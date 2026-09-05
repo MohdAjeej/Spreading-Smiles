@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import TreatmentGrid from "@/components/TreatmentGrid";
+import ProceduresVideos from "@/components/ProceduresVideos";
+import PatientJourney from "@/components/PatientJourney";
 import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -18,7 +20,9 @@ export default function TreatmentsPage() {
         subtitle="Editorial-grade care across every major restorative and cosmetic dental treatment, delivered by specialists you can trust."
         image={images.clinic.interior}
       />
+      <PatientJourney />
       <TreatmentGrid showHeading={false} />
+      <ProceduresVideos />
     </>
   );
 }

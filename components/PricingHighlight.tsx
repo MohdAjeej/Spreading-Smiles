@@ -8,10 +8,30 @@ import Button from "@/components/ui/Button";
 import { images } from "@/lib/images";
 
 const savings = [
-  { treatment: "Dental Implants", usaPrice: "$3,000 - $6,000", indiaPrice: "$800 - $1,500", savings: "70%" },
-  { treatment: "Smile Makeover", usaPrice: "$15,000 - $30,000", indiaPrice: "$3,000 - $8,000", savings: "75%" },
-  { treatment: "Teeth Whitening", usaPrice: "$500 - $1,000", indiaPrice: "$150 - $300", savings: "70%" },
-  { treatment: "Root Canal", usaPrice: "$800 - $1,500", indiaPrice: "$100 - $300", savings: "80%" },
+  {
+    treatment: "Dental Implants",
+    usaPrice: "$3,000 - $6,000",
+    indiaPrice: "$800 - $1,500",
+    savings: "70%",
+  },
+  {
+    treatment: "Smile Makeover",
+    usaPrice: "$15,000 - $30,000",
+    indiaPrice: "$3,000 - $8,000",
+    savings: "75%",
+  },
+  {
+    treatment: "Teeth Whitening",
+    usaPrice: "$500 - $1,000",
+    indiaPrice: "$150 - $300",
+    savings: "70%",
+  },
+  {
+    treatment: "Root Canal",
+    usaPrice: "$800 - $1,500",
+    indiaPrice: "$100 - $300",
+    savings: "80%",
+  },
 ];
 
 const benefits = [
@@ -27,6 +47,8 @@ export default function PricingHighlight() {
     <section className="relative overflow-hidden bg-white py-24">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,19 +57,23 @@ export default function PricingHighlight() {
           >
             <div className="flex items-center gap-2 text-pink">
               <DollarSign size={24} strokeWidth={1.75} />
+
               <span className="text-sm font-semibold uppercase tracking-wide">
                 Affordable Excellence
               </span>
             </div>
+
             <h2 className="mt-4 font-serif text-4xl leading-tight text-navy sm:text-5xl">
               Save 50-70% Without Compromising Quality
             </h2>
+
             <p className="mt-6 text-balance text-lg leading-relaxed text-navy-soft">
-              Experience world-class dental care at a fraction of Western costs. Our
-              international patients save thousands while receiving the same high
-              standards of treatment, technology, and expertise.
+              Experience world-class dental care at a fraction of Western
+              costs. Our international patients save thousands while receiving
+              the same high standards of treatment, technology, and expertise.
             </p>
 
+            {/* BENEFITS */}
             <div className="mt-8 space-y-3">
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -55,17 +81,24 @@ export default function PricingHighlight() {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.1,
+                  }}
                   className="flex items-start gap-3"
                 >
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-pink-light text-pink">
                     <Check size={14} strokeWidth={2.5} />
                   </span>
-                  <span className="text-sm text-navy">{benefit}</span>
+
+                  <span className="text-sm text-navy">
+                    {benefit}
+                  </span>
                 </motion.div>
               ))}
             </div>
 
+            {/* BUTTON */}
             <div className="mt-10">
               <Button href="/pricing" variant="primary" size="lg">
                 View Detailed Pricing
@@ -73,23 +106,41 @@ export default function PricingHighlight() {
             </div>
           </motion.div>
 
+          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative w-full"
           >
-            <div className="relative w-full max-w-[1500px] overflow-hidden rounded-2xl bg-white p-8 shadow-2xl">
-              <Image
-                src={images.clinic.pricing.src}
-                alt={images.clinic.pricing.alt}
-                width={1500}
-                height={1200}
-                className="h-auto w-full object-contain"
-              />
+            {/* IMAGE CARD */}
+            <div className="relative w-full overflow-visible rounded-2xl shadow-2xl">
+
+              {/* LARGE IMAGE */}
+              <div className="relative flex w-full items-center justify-center overflow-visible">
+                <Image
+                  src={images.clinic.pricing.src}
+                  alt={images.clinic.pricing.alt}
+                  width={1800}
+                  height={1029}
+                  priority
+                  sizes="(max-width: 768px) 100vw, 70vw"
+                  className="
+                    block
+                    h-auto
+                    w-[140%]
+                    max-w-none
+                    -ml-[20%]
+                    rounded-2xl
+                    object-contain
+                  "
+                />
+              </div>
+
             </div>
           </motion.div>
+
         </div>
       </Container>
     </section>

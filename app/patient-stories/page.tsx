@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Testimonials from "@/components/Testimonials";
 import PatientStoriesVideos from "@/components/PatientStoriesVideos";
-import ProceduresVideos from "@/components/ProceduresVideos";
 import HealthyTipsVideos from "@/components/HealthyTipsVideos";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
@@ -24,7 +23,6 @@ export default function PatientStoriesPage() {
         image={images.clinic.closeupSmile}
       />
       <PatientStoriesVideos />
-      <ProceduresVideos />
       <HealthyTipsVideos />
       <Testimonials />
       <BeforeAfter />

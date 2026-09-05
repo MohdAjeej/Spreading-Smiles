@@ -5,8 +5,8 @@ import PageHero from "@/components/PageHero";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/SectionHeading";
 import TrustStats from "@/components/TrustStats";
-import DentistSection from "@/components/DentistSection";
 import CTASection from "@/components/CTASection";
+import SmilesForSmiles from "@/components/SmilesForSmiles";
 import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -39,17 +39,32 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About Us"
-        title="Making World-Class Dental Care Accessible"
-        subtitle="We connect international patients with India's leading dental specialists — combining premium treatment with a seamless travel experience."
-        image={images.clinic.interior}
-      />
-
-      <section className="py-24">
+     
+      <section className="py-16">
         <Container>
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-xl">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-pink">
+                Our Story
+              </span>
+              <h2 className="font-serif text-3xl text-navy sm:text-4xl">
+                A decade of guiding patients to confident new smiles
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-navy-soft sm:text-base">
+                Spreading Smiles is a modern dental clinic dedicated to delivering
+                high-quality, painless, and advanced dental treatments in a
+                comfortable environment. We combine expert care with modern
+                technology, building patient relationships through trust and
+                transparency.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-navy-soft sm:text-base">
+                Every treatment plan is personalized, every environment is
+                comfortable, and every price is transparent — backed by the
+                highest sterilization standards and emergency care when you need
+                it most.
+              </p>
+            </div>
+            <div className="relative aspect-[4/5] max-h-[500px] overflow-hidden rounded-[2rem] shadow-xl">
               <Image
                 src={images.clinic.treatmentRoom.src}
                 alt={images.clinic.treatmentRoom.alt}
@@ -58,32 +73,13 @@ export default function AboutPage() {
                 className="object-cover"
               />
             </div>
-            <div>
-              <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-pink">
-                Our Story
-              </span>
-              <h2 className="font-serif text-3xl text-navy sm:text-4xl">
-                A decade of guiding patients to confident new smiles
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-navy-soft">
-                Spreading Smiles is a modern dental clinic dedicated to delivering
-                high-quality, painless, and advanced dental treatments in a
-                comfortable environment. We combine expert care with modern
-                technology, building patient relationships through trust and
-                transparency.
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-navy-soft">
-                Every treatment plan is personalized, every environment is
-                comfortable, and every price is transparent — backed by the
-                highest sterilization standards and emergency care when you need
-                it most.
-              </p>
-            </div>
           </div>
         </Container>
       </section>
 
       <TrustStats />
+
+      <SmilesForSmiles />
 
       <section className="py-24">
         <Container>
@@ -111,7 +107,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <DentistSection showCta />
       <CTASection />
     </>
   );

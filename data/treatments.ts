@@ -17,6 +17,88 @@ export type Treatment = {
 
 export const treatments: Treatment[] = [
   {
+    slug: "dental-implants",
+    name: "Dental Implants",
+    shortDescription:
+      "Permanent, natural-looking replacements for missing teeth.",
+    description:
+      "Dental implants are titanium posts surgically placed into your jawbone to serve as artificial tooth roots. They provide a permanent, natural-looking solution for missing teeth that looks, feels, and functions like your natural teeth. Our advanced 3D imaging ensures precise placement for optimal results.",
+    duration: "7–10 Days",
+    visits: "2–3 Visits",
+    startingPrice: "$250 / tooth",
+    startingPriceUSD: 250,
+    priceUnit: "tooth",
+    image: images.treatments.dentalImplants,
+    category: "implants",
+    whatsIncluded: [
+      "Comprehensive diagnostic scans (CT/X-ray)",
+      "Premium titanium implant placement",
+      "Custom crown fabrication",
+      "Post-treatment care kit and guidance",
+    ],
+  },
+  {
+    slug: "full-mouth-rehabilitation",
+    name: "Full Mouth Rehabilitation",
+    shortDescription:
+      "Complete restoration for optimal dental function and aesthetics.",
+    description:
+      "Full mouth rehabilitation is a comprehensive treatment plan that restores all teeth in both upper and lower jaws. This complex procedure combines multiple treatments including implants, crowns, bridges, and veneers to restore complete oral function and create a beautiful, natural-looking smile.",
+    duration: "10–14 Days",
+    visits: "Multiple Visits",
+    startingPrice: "$3,000",
+    startingPriceUSD: 3000,
+    image: images.treatments.fullMouthRehab,
+    category: "full-mouth",
+    whatsIncluded: [
+      "Complete oral examination and planning",
+      "Advanced 3D imaging and smile design",
+      "Combination of implants, crowns, and bridges",
+      "Long-term maintenance plan",
+    ],
+  },
+  {
+    slug: "smile-makeover",
+    name: "Smile Makeover",
+    shortDescription:
+      "Transform your smile with customized cosmetic treatments.",
+    description:
+      "A smile makeover is a personalized combination of cosmetic dental procedures designed to enhance your smile's appearance. We analyze your facial features, skin tone, and personal preferences to create a treatment plan that may include teeth whitening, veneers, bonding, or reshaping for your perfect smile.",
+    duration: "5–7 Days",
+    visits: "2–3 Visits",
+    startingPrice: "$500",
+    startingPriceUSD: 500,
+    image: images.treatments.smileMakeover,
+    category: "smile-makeover",
+    whatsIncluded: [
+      "Digital smile design consultation",
+      "Customized treatment plan",
+      "Combination of cosmetic procedures",
+      "Before and after photography",
+    ],
+  },
+  {
+    slug: "crowns-bridges",
+    name: "Crowns & Bridges",
+    shortDescription:
+      "Durable solutions to restore and replace damaged teeth.",
+    description:
+      "Dental crowns cover and protect damaged teeth, while bridges replace one or more missing teeth by anchoring to adjacent teeth. Both solutions use high-quality materials like zirconia or ceramic to restore function and create a natural appearance that blends seamlessly with your existing teeth.",
+    duration: "4–5 Days",
+    visits: "2 Visits",
+    startingPrice: "$80 / tooth",
+    startingPriceUSD: 80,
+    priceUnit: "tooth",
+    image: images.treatments.crownsBridges,
+    category: "veneers",
+    whatsIncluded: [
+      "Precision digital impressions",
+      "Metal-free zirconia/ceramic restoration",
+      "Bite and comfort calibration",
+      "Long-term warranty guidance",
+    ],
+  },
+  {
     slug: "consultation",
     name: "Consultation",
     shortDescription:
