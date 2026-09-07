@@ -18,7 +18,7 @@ export default function DentalTourismPage() {
         eyebrow="Dental Tourism"
         title="Care Without Borders"
         subtitle="Combine premium dental treatment with a seamless travel experience, guided by a dedicated coordinator every step of the way."
-        video="/youtube.mp4"
+        video="/spreadingSmiles/youtube.mp4"
       />
       <WhyChooseUs />
       <InternationalPatients />
