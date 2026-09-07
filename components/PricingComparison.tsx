@@ -15,6 +15,13 @@ import {
 import { pricingData } from "@/data/pricing";
 import { formatPriceRange } from "@/lib/currency";
 
+function getPriceForTreatment(
+  treatmentSlug: string,
+  countryCode: CurrencyOption["countryCode"],
+) {
+  return pricingData[treatmentSlug]?.[countryCode];
+}
+
 export default function PricingComparison({
   showHeading = true,
   limit,
@@ -87,11 +94,20 @@ export default function PricingComparison({
                           transition={{ duration: 0.15 }}
                           className="inline-block"
                         >
-                          {formatPriceRange(
-                            pricingData[treatment.slug][currency.countryCode],
-                            currency,
-                            treatment.priceUnit,
-                          )}
+                          {(() => {
+                            const price = getPriceForTreatment(
+                              treatment.slug,
+                              currency.countryCode,
+                            );
+
+                            return price
+                              ? formatPriceRange(
+                                  price,
+                                  currency,
+                                  treatment.priceUnit,
+                                )
+                              : "Price on request";
+                          })()}
                         </motion.span>
                       </AnimatePresence>
                     </td>

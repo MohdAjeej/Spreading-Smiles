@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,11 +43,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        {/* Chatbot CSS */}
+        <link rel="stylesheet" href="/chatbot/chat-widget.css" />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-navy font-sans">
         <Navbar />
         <main className="flex-1 pb-16 md:pb-0">{children}</main>
         <Footer />
         <FloatingContact />
+        <Script
+          src="https://ihp.ind.in/chat-widget.js"
+          strategy="afterInteractive" // or "lazyOnload"
+          data-backend-url="https://ihp.ind.in/chatbot-api"
+          data-label="Chat with us"
+        />
       </body>
     </html>
   );
