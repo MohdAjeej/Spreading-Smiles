@@ -202,7 +202,7 @@ const itinerary10Days = [
     dayDisplay: "6",
     title: "Leisure & Recovery",
     icon: Utensils,
-    image: images.travel.hotelPool,
+    image: images.travel.gangaArti,
     activities: [
       "Spa and relaxation",
       "Gentle sightseeing",
@@ -328,7 +328,7 @@ const itinerary14Days = [
     dayDisplay: "7",
     title: "Wellness, Final Check & Departure",
     icon: CheckCircle2,
-    image: images.travel.hotelPool,
+    image: images.travel.gangaArti,
     activities: [
       "Ayurvedic spa & wellness treatments",
       "Final comprehensive dental checkup",

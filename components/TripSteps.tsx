@@ -24,8 +24,6 @@ export default function TripSteps() {
           >
             <h2 className="font-serif text-3xl leading-tight text-navy sm:text-4xl">
               Dental Tourism
-              <br />
-              <span className="font-bold text-white">What, How, Where?</span>
             </h2>
 
             <div className="mt-9">

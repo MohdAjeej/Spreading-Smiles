@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Container from "@/components/ui/Container";
 import type { ImageAsset } from "@/lib/images";
 
@@ -18,6 +19,8 @@ export default function PageHero({
   image?: ImageAsset;
   video?: string;
 }) {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-blush/60 to-white pt-16 pb-16 sm:pt-20 sm:pb-20">
       <Container>
@@ -41,22 +44,23 @@ export default function PageHero({
             <p className="mt-5 text-balance text-lg text-navy-soft">{subtitle}</p>
           </motion.div>
 
-          {video ? (
+          {video && !videoError ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-xl"
+              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-xl bg-navy/5"
             >
               <video
-                src={video}
                 controls
-                autoPlay
-                muted
-                loop
                 playsInline
+                preload="metadata"
                 className="h-full w-full object-cover"
-              />
+                onError={() => setVideoError(true)}
+              >
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
           ) : image ? (
             <motion.div

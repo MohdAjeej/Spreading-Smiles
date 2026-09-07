@@ -65,7 +65,7 @@ export const images = {
       alt: "World map showing international patients from across the globe choosing Spreading Smiles in Noida, India",
     } satisfies ImageAsset,
     pricing: {
-      src: "/pricing qw.jpeg",
+      src: "/spreadingSmiles/pricing qw.jpeg",
       alt: "Dental treatment pricing comparison chart showing savings",
     } satisfies ImageAsset,
   },
@@ -135,6 +135,10 @@ export const images = {
     giftBoxes: {
       src: "/spreadingSmiles/gifting.jpeg",
       alt: "Black gift boxes with golden ribbons representing the patient referral reward",
+    } satisfies ImageAsset,
+    gangaArti: {
+      src: "/spreadingSmiles/ganga arti.jpeg",
+      alt: "Beautiful Ganga Aarti ceremony with lamps and spiritual atmosphere",
     } satisfies ImageAsset,
   },
   dentists: {

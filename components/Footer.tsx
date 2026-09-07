@@ -33,14 +33,14 @@ const infoColumns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-pink text-navy">
+    <footer className="bg-blue text-white">
       <Container className="pb-16 pt-20 text-center">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-navy/70">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
           Contact Us
         </span>
         <a
           href={brand.phoneHref}
-          className="mt-3 block font-serif text-4xl text-navy transition-opacity hover:opacity-80 sm:text-5xl"
+          className="mt-3 block font-serif text-4xl text-white transition-opacity hover:opacity-80 sm:text-5xl"
         >
           {brand.phone}
         </a>
@@ -48,13 +48,13 @@ export default function Footer() {
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-3">
           {infoColumns.map((info) => (
             <div key={info.label} className="flex flex-col items-center gap-2">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/70 text-navy">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/20 text-white">
                 <info.icon size={18} strokeWidth={1.75} />
               </span>
-              <p className="text-xs font-semibold uppercase tracking-wide text-navy/70">
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/70">
                 {info.label}
               </p>
-              <p className="max-w-[220px] text-sm text-navy">{info.value}</p>
+              <p className="max-w-[220px] text-sm text-white">{info.value}</p>
             </div>
           ))}
         </div>
